@@ -18,7 +18,12 @@ const camera = new THREE.PerspectiveCamera(
 const axesHelper = new THREE.AxesHelper(5)  // adds 3d guide to the scene; (5) = length of axis
 scene.add(axesHelper);
 
-camera.position.z = 5;
+camera.position.set = (0, 2, 5);
+
+const boxGeometry = new THREE.BoxGeometry();
+const boxMaterial = new THREE.MeshBasicMaterial({color: 0x00FF00});
+const box = new THREE.Mesh(boxGeometry, boxMaterial);
+scene.add(box);
 
 renderer.render(scene, camera);
 
